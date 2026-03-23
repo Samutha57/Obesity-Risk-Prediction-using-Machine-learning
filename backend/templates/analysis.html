@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Model Analysis</h1>
+
+    <h3>Algorithm Accuracy</h3>
+    <ul>
+        {% for algo, acc in accuracies.items() %}
+            <li>{{ algo }} : {{ acc|round(2) }}%</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Accuracy Comparison</h3>
+    <img src="{{ url_for('static', filename='accuracy.png') }}">
+
+    <h3>Confusion Matrix</h3>
+    <img src="{{ url_for('static', filename='confusion.png') }}">
+
+    <br>
+    <a href="/" class="btn">Back</a>
+</div>
+
+</body>
+</html>

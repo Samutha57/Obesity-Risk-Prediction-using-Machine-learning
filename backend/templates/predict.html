@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Details</h2>
+
+    <form method="post">
+        
+
+<select name="Gender" required>
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select>
+
+<input name="Age" placeholder="Age" required>
+<input name="Height" placeholder="Height (m)" required>
+<input name="Weight" placeholder="Weight (kg)" required>
+
+<select name="family_history" required>
+    <option value="">Family History?</option>
+    <option>yes</option>
+    <option>no</option>
+</select>
+
+<select name="FAVC" required>
+    <option value="">High Calorie Food?</option>
+    <option>yes</option>
+    <option>no</option>
+</select>
+
+<select name="FCVC" required>
+    <option value="">Vegetable Consumption</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<input name="NCP" placeholder="Meals per day" required>
+
+<select name="CAEC" required>
+    <option value="">Eating Between Meals</option>
+    <option>no</option>
+    <option>sometimes</option>
+    <option>often</option>
+</select>
+
+<select name="SMOKE" required>
+    <option value="">Smoking?</option>
+    <option>yes</option>
+    <option>no</option>
+</select>
+
+<select name="CH2O" required>
+    <option value="">Water Intake</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<select name="SCC" required>
+    <option value="">Calories Monitoring?</option>
+    <option>yes</option>
+    <option>no</option>
+</select>
+
+<select name="FAF" required>
+    <option value="">Physical Activity</option>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<select name="TUE" required>
+    <option value="">Technology Usage</option>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+</select>
+
+<select name="CALC" required>
+    <option value="">Alcohol Consumption</option>
+    <option>no</option>
+    <option>sometimes</option>
+    <option>often</option>
+</select>
+
+<select name="MTRANS" required>
+    <option value="">Transport</option>
+    <option>Walking</option>
+    <option>Bike</option>
+    <option>Motorbike</option>
+    <option>Car</option>
+    <option>Public Transport</option>
+</select>
+        <button type="submit">Predict</button>
+    </form>
+
+    <br>
+    <a href="/" class="btn">Back</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* -------- BODY -------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #ffe0b2); /* pink to soft orange gradient */
+    color: #d84315; /* deep orange-red text */
+}
+
+/* -------- CONTAINER -------- */
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: #fff3e0; /* light orange container */
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(216, 67, 21, 0.15); /* subtle orange shadow */
+    text-align: center;
+}
+
+h2 {
+    color: rgba(14, 13, 13, 0.89); 
+    font-weight: 800;/* deep orange */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* -------- HEADINGS -------- */
+h1, h3 {
+    margin-bottom: 20px;
+    color: #f06292; /* pink heading */
+}
+
+/* Subtitle for homepage */
+.subtitle {
+    margin-bottom: 25px;
+    color: #fb8c00; /* orange subtitle */
+    font-size: 16px;
+}
+
+/* -------- FORM ALIGNMENT -------- */
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------- INPUTS & SELECT -------- */
+input, select {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ffb74d; /* light orange border */
+    outline: none;
+    font-size: 14px;
+    background: #fff3e0; /* light orange input */
+    color: #d84315;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #f48fb1; /* pink placeholder */
+}
+
+/* Dropdown options */
+select option {
+    color: #d84315;
+}
+
+/* Focus */
+input:focus, select:focus {
+    border-color: #fb8c00; /* bright orange focus */
+    box-shadow: 0 0 8px rgba(251, 140, 0, 0.3);
+    background: #ffffff;
+}
+
+/* -------- BUTTONS -------- */
+button, .btn {
+    background: #fb8c00; /* bright orange button */
+    color: #ffffff; /* white text */
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background: #f57c00; /* darker orange hover */
+    transform: scale(1.05);
+}
+
+/* -------- BUTTON ALIGNMENT -------- */
+form button {
+    display: block;
+    margin: 15px auto 5px auto;
+}
+
+a.btn {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+/* -------- BUTTON GROUP (Homepage buttons) -------- */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Homepage buttons styling */
+.button-group .btn {
+    width: 220px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fb8c00; /* orange */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(216, 67, 21, 0.15);
+    transition: 0.3s;
+}
+
+.button-group .btn:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 600px) {
+    input, select {
+        width: 100%;
+    }
+    
+    .button-group .btn {
+        width: 80%;
+    }
+    
+    .container {
+        width: 95%;
+    }
+}

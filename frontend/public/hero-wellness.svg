@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="50%" stop-color="#d1fae5"/>
+      <stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="420" rx="28" fill="url(#bgGrad)"/>
+  <circle cx="420" cy="90" r="72" fill="#10b981" opacity="0.12"/>
+  <circle cx="100" cy="320" r="96" fill="#059669" opacity="0.1"/>
+  <rect x="48" y="64" width="464" height="292" rx="20" fill="url(#cardGrad)" stroke="#6ee7b7" stroke-width="2"/>
+  <rect x="88" y="248" width="36" height="72" rx="6" fill="#34d399"/>
+  <rect x="140" y="212" width="36" height="108" rx="6" fill="#10b981"/>
+  <rect x="192" y="180" width="36" height="140" rx="6" fill="#059669"/>
+  <rect x="244" y="228" width="36" height="92" rx="6" fill="#34d399"/>
+  <path d="M72 200 L120 168 L168 188 L216 142 L264 158" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+  <circle cx="264" cy="158" r="8" fill="#047857"/>
+  <path d="M380 118c-18-22-48-22-60 0-12-22-42-22-60 0-26 32 60 78 60 78s86-46 60-78z" fill="#ef4444" opacity="0.9"/>
+  <path d="M368 128c-8-10-22-10-28 0-6-10-20-10-28 0-12 14 28 34 28 34s40-20 28-34z" fill="#fecaca"/>
+  <ellipse cx="392" cy="268" rx="44" ry="52" fill="#0f766e" opacity="0.15"/>
+  <circle cx="392" cy="214" r="28" fill="#0d9488"/>
+  <path d="M392 242c-32 0-52 28-56 64h112c-4-36-24-64-56-64z" fill="#0f766e"/>
+  <rect x="72" y="96" width="88" height="36" rx="10" fill="#fff" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="116" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#047857">BMI + ML</text>
+  <rect x="176" y="100" width="76" height="32" rx="8" fill="#10b981" opacity="0.2"/>
+  <text x="214" y="121" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#065f46">4 models</text>
+</svg>

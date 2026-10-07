@@ -1,0 +1,429 @@
+{
+  "best_model_name": "Decision Tree",
+  "models": [
+    {
+      "name": "Random Forest",
+      "accuracy": 99.67,
+      "precision": 99.59,
+      "recall": 99.45,
+      "f1_score": 99.52
+    },
+    {
+      "name": "Extra Trees",
+      "accuracy": 93.58,
+      "precision": 93.63,
+      "recall": 91.78,
+      "f1_score": 92.52
+    },
+    {
+      "name": "Decision Tree",
+      "accuracy": 100.0,
+      "precision": 100.0,
+      "recall": 100.0,
+      "f1_score": 100.0
+    },
+    {
+      "name": "LightGBM",
+      "accuracy": 99.25,
+      "precision": 99.07,
+      "recall": 99.03,
+      "f1_score": 99.05
+    }
+  ],
+  "feature_importance": [
+    {
+      "model": "Random Forest",
+      "features": [
+        {
+          "feature": "bmi",
+          "importance": 0.6212
+        },
+        {
+          "feature": "weight_kg",
+          "importance": 0.2292
+        },
+        {
+          "feature": "height_cm",
+          "importance": 0.0876
+        },
+        {
+          "feature": "age",
+          "importance": 0.0336
+        },
+        {
+          "feature": "eating_habits_Moderate",
+          "importance": 0.0032
+        },
+        {
+          "feature": "eating_habits_Unhealthy",
+          "importance": 0.0032
+        },
+        {
+          "feature": "physical_activity_Moderate",
+          "importance": 0.0031
+        },
+        {
+          "feature": "physical_activity_Low",
+          "importance": 0.0031
+        }
+      ]
+    },
+    {
+      "model": "Extra Trees",
+      "features": [
+        {
+          "feature": "bmi",
+          "importance": 0.5278
+        },
+        {
+          "feature": "weight_kg",
+          "importance": 0.2441
+        },
+        {
+          "feature": "height_cm",
+          "importance": 0.1175
+        },
+        {
+          "feature": "age",
+          "importance": 0.071
+        },
+        {
+          "feature": "gender_M",
+          "importance": 0.005
+        },
+        {
+          "feature": "gender_F",
+          "importance": 0.005
+        },
+        {
+          "feature": "eating_habits_Moderate",
+          "importance": 0.0047
+        },
+        {
+          "feature": "physical_activity_Low",
+          "importance": 0.0042
+        }
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "features": [
+        {
+          "feature": "bmi",
+          "importance": 1.0
+        },
+        {
+          "feature": "age",
+          "importance": 0.0
+        },
+        {
+          "feature": "height_cm",
+          "importance": 0.0
+        },
+        {
+          "feature": "weight_kg",
+          "importance": 0.0
+        },
+        {
+          "feature": "gender_F",
+          "importance": 0.0
+        },
+        {
+          "feature": "gender_M",
+          "importance": 0.0
+        },
+        {
+          "feature": "physical_activity_High",
+          "importance": 0.0
+        },
+        {
+          "feature": "physical_activity_Low",
+          "importance": 0.0
+        }
+      ]
+    },
+    {
+      "model": "LightGBM",
+      "features": [
+        {
+          "feature": "bmi",
+          "importance": 6924.0
+        },
+        {
+          "feature": "height_cm",
+          "importance": 2843.0
+        },
+        {
+          "feature": "weight_kg",
+          "importance": 1856.0
+        },
+        {
+          "feature": "age",
+          "importance": 1807.0
+        },
+        {
+          "feature": "gender_F",
+          "importance": 300.0
+        },
+        {
+          "feature": "physical_activity_Low",
+          "importance": 213.0
+        },
+        {
+          "feature": "family_history_No",
+          "importance": 161.0
+        },
+        {
+          "feature": "eating_habits_Unhealthy",
+          "importance": 141.0
+        }
+      ]
+    }
+  ],
+  "confusion_matrices": [
+    {
+      "model": "Random Forest",
+      "matrix": [
+        [
+          350,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          183,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          116,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          127,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          296,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          124
+        ]
+      ],
+      "labels": [
+        "Underweight",
+        "Normal",
+        "Overweight",
+        "Obese Type I",
+        "Obese Type II",
+        "Obese Type III"
+      ]
+    },
+    {
+      "model": "Extra Trees",
+      "matrix": [
+        [
+          343,
+          0,
+          0,
+          0,
+          3,
+          4
+        ],
+        [
+          0,
+          168,
+          3,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          23,
+          91,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          125,
+          0,
+          0
+        ],
+        [
+          7,
+          6,
+          0,
+          0,
+          283,
+          0
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          113
+        ]
+      ],
+      "labels": [
+        "Underweight",
+        "Normal",
+        "Overweight",
+        "Obese Type I",
+        "Obese Type II",
+        "Obese Type III"
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "matrix": [
+        [
+          350,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          183,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          119,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          128,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          296,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          124
+        ]
+      ],
+      "labels": [
+        "Underweight",
+        "Normal",
+        "Overweight",
+        "Obese Type I",
+        "Obese Type II",
+        "Obese Type III"
+      ]
+    },
+    {
+      "model": "LightGBM",
+      "matrix": [
+        [
+          349,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          181,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          116,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          126,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          295,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          124
+        ]
+      ],
+      "labels": [
+        "Underweight",
+        "Normal",
+        "Overweight",
+        "Obese Type I",
+        "Obese Type II",
+        "Obese Type III"
+      ]
+    }
+  ]
+}

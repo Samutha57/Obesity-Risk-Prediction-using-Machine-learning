@@ -22,8 +22,8 @@ export default function Analysis() {
         setCmp(c)
         setFi(f)
         setCm(m)
-        const fiNames = (f?.models || []).map((x) => x.name)
-        const cmNames = (m?.models || []).map((x) => x.name)
+        const fiNames = (f?.models || []).map((x) => x.model || x.name)
+        const cmNames = (m?.models || []).map((x) => x.model || x.name)
         if (fiNames.length) setFiModel(fiNames[0])
         if (cmNames.length) setCmModel(cmNames[0])
       })
@@ -38,8 +38,8 @@ export default function Analysis() {
     }
   }, [])
 
-  const fiSelected = (fi?.models || []).find((x) => x.name === fiModel)
-  const cmSelected = (cm?.models || []).find((x) => x.name === cmModel)
+  const fiSelected = (fi?.models || []).find((x) => (x.model || x.name) === fiModel)
+  const cmSelected = (cm?.models || []).find((x) => (x.model || x.name) === cmModel)
   const modelList = cmp?.models || []
   const bestModel =
     modelList.length > 0 ? modelList.reduce((a, b) => (b.accuracy > a.accuracy ? b : a)) : null
@@ -92,11 +92,14 @@ export default function Analysis() {
                     onChange={(e) => setFiModel(e.target.value)}
                     className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                   >
-                    {(fi?.models || []).map((m) => (
-                      <option key={m.name} value={m.name}>
-                        {m.name}
-                      </option>
-                    ))}
+                    {(fi?.models || []).map((m) => {
+                      const name = m.model || m.name
+                      return (
+                        <option key={name} value={name}>
+                          {name}
+                        </option>
+                      )
+                    })}
                   </select>
                 </label>
               </div>
@@ -115,11 +118,14 @@ export default function Analysis() {
                     onChange={(e) => setCmModel(e.target.value)}
                     className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                   >
-                    {(cm?.models || []).map((m) => (
-                      <option key={m.name} value={m.name}>
-                        {m.name}
-                      </option>
-                    ))}
+                    {(cm?.models || []).map((m) => {
+                      const name = m.model || m.name
+                      return (
+                        <option key={name} value={name}>
+                          {name}
+                        </option>
+                      )
+                    })}
                   </select>
                 </label>
               </div>

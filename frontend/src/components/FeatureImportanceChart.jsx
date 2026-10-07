@@ -11,11 +11,14 @@ import {
 export default function FeatureImportanceChart({ features }) {
   const data = [...(features || [])]
     .sort((a, b) => a.importance - b.importance)
-    .map((f) => ({
-      name: f.name.length > 28 ? `${f.name.slice(0, 26)}…` : f.name,
-      fullName: f.name,
-      importance: f.importance,
-    }))
+    .map((f) => {
+      const featName = f.feature || f.name || ''
+      return {
+        name: featName.length > 28 ? `${featName.slice(0, 26)}…` : featName,
+        fullName: featName,
+        importance: f.importance,
+      }
+    })
 
   return (
     <div className="h-[420px] w-full">

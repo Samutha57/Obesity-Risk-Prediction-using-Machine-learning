@@ -20,9 +20,9 @@ export default function ModelComparisonChart({ data }) {
         <BarChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 8 }}>
           <CartesianGrid strokeDasharray="3 3" className="stroke-slate-200 dark:stroke-slate-700" />
           <XAxis dataKey="name" tick={{ fontSize: 12 }} interval={0} angle={-12} textAnchor="end" height={60} />
-          <YAxis domain={[0, 1]} tickFormatter={(v) => `${(v * 100).toFixed(0)}%`} />
+          <YAxis domain={[0, 100]} tickFormatter={(v) => `${v}%`} />
           <Tooltip
-            formatter={(v) => [`${(Number(v) * 100).toFixed(2)}%`, 'Accuracy']}
+            formatter={(v) => [`${Number(v).toFixed(2)}%`, 'Accuracy']}
             contentStyle={{ borderRadius: '8px' }}
           />
           <Bar dataKey="accuracy" fill="#059669" radius={[6, 6, 0, 0]} name="Accuracy" />

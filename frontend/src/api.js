@@ -1,59 +1,67 @@
 const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
-async function handle(res) {
-  if (!res.ok) {
-    let detail = res.statusText
-    try {
-      const j = await res.json()
-      detail = j.detail ?? JSON.stringify(j)
-    } catch {
-      /* ignore */
+async function request(url, options) {
+  try {
+    const res = await fetch(url, options)
+    if (!res.ok) {
+      let detail = res.statusText
+      try {
+        const j = await res.json()
+        detail = j.detail ?? JSON.stringify(j)
+      } catch {
+        /* ignore */
+      }
+      throw new Error(typeof detail === 'string' ? detail : JSON.stringify(detail))
     }
-    throw new Error(typeof detail === 'string' ? detail : JSON.stringify(detail))
+    return await res.json()
+  } catch (err) {
+    if (err.name === 'TypeError' && err.message.includes('fetch')) {
+      throw new Error('Unable to connect to backend API server (http://localhost:8000). Please start the FastAPI backend.')
+    }
+    throw err
   }
-  return res.json()
 }
 
 export function predict(payload) {
-  return fetch(`${BASE}/predict`, {
+  return request(`${BASE}/predict`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
-  }).then(handle)
+  })
 }
 
 export function compare() {
-  return fetch(`${BASE}/compare`).then(handle)
+  return request(`${BASE}/compare`)
 }
 
 export function featureImportance() {
-  return fetch(`${BASE}/feature-importance`).then(handle)
+  return request(`${BASE}/feature-importance`)
 }
 
 export function confusionMatrix() {
-  return fetch(`${BASE}/confusion-matrix`).then(handle)
+  return request(`${BASE}/confusion-matrix`)
 }
 
 export function recommend(obesityLevel) {
-  return fetch(`${BASE}/recommend`, {
+  return request(`${BASE}/recommend`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ obesity_level: obesityLevel }),
-  }).then(handle)
+  })
 }
 
 export function loginApi(email, password) {
-  return fetch(`${BASE}/login`, {
+  return request(`${BASE}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
-  }).then(handle)
+  })
 }
 
 export function signupApi(name, email, password) {
-  return fetch(`${BASE}/signup`, {
+  return request(`${BASE}/signup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),
-  }).then(handle)
+  })
 }
